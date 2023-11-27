@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful String Methods</title>
+</head>
+<body>
+    
+    <script>
+        // includes()
+        // Sometimes you'll want to find if a smaller string is present inside a larger one (we generally say if a substring is present inside a string). This can be done using the 'includes()' method, which takes a single parameter — the substring you want to search for.
+        const browserType = "mozilla";
+
+        if (browserType.includes("zilla")) {
+            console.log("Found zilla!");
+        } else {
+            console.log("No zilla here!");
+        }
+
+        // Often you'll want to know if a string starts or ends with a particular substring. This is a common enough need that there are two special methods for this: 'startsWith()' and 'endsWith()';
+        browserType = "mozilla";
+
+        // startsWith()
+        if (browserType.startsWith("zilla")) {
+            console.log("Found zilla!");
+        } else {
+            console.log("No zilla here!");
+        }
+
+        //endsWith()
+        if (browserType.endsWith("zilla")) {
+            console.log("Found zilla!");
+        } else {
+            console.log("No zilla here!");
+        }
+
+
+        // You can find the position of a substring inside a larger string using the 'indexOf()' method. This method 'takes two parameters' – the substring that you want to search for, and an optional parameter that specifies the starting point of the search.
+        const tagline = "MDN - Resources for developers, by developers";
+        console.log(tagline.indexOf("developers")); // 20
+
+        // Starting at 0, if you count the number of characters (including the whitespace) from the beginning of the string, the first occurrence of the substring "developers" is at index 20.
+        console.log(tagline.indexOf("x")); // -1
+
+        // slice() method
+        browserType = "mozilla";
+        console.log(borwserType.slice(1,4 + 1)); // "ozi"
+
+        // If you know that you want to extract all of the remaining characters in a string after a certain character, you don't have to include the second parameter. Instead, you only need to include the character position from where you want to extract the remaining characters in a string. Try the following:
+        browserType.slice(2); // return "zilla"
+
+        // The string methods toLowerCase() and toUpperCase() take a string and convert all the characters to lower- or uppercase, respectively.
+        const radData = "My NaMe Is MuD";
+        console.log(radData.toUpperCase()); // MY NAME IS MUD
+        console.log(radData.toLowerCase()); // my name is mud
+
+        
+    </script>
+</body>
+</html>
