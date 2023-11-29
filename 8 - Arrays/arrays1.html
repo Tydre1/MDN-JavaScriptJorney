@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Arrays: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    // Vamos começar com algumas práticas básicas sobre arrays. Nesta tarefa gostaríamos que você criasse um array de três itens, armazenados dentro de uma variável chamada myArray. Os itens podem ser o que você quiser – que tal suas comidas ou bandas favoritas?
+        // Em seguida, modifique os dois primeiros itens da matriz usando notação e atribuição simples de colchetes. Em seguida, adicione um novo item ao início do array.
+        // Tente atualizar o código ativo abaixo para recriar o exemplo finalizado:
+
+        // Add your code here
+        let myArray = [22, "André", 5]
+        myArray[0] = "Natália"; // ["Natália", "André", 5]
+        // the 'myArray[0]' for change the first item - in computers they count 0,1,2.
+        myArray[1] = "Antonieta"; // ["Natália", "Antonieta", 5]
+        myArray.unshift("Héstia"); // ["Héstia", "Natália", "Antonieta", 5]
+        // 'unshift()' is for add a item ate the beggining of the array, and 'shift()' is to add at the final
+
+        // Don't edit the code below here!
+
+        section.innerHTML = ' ';
+        let para1 = document.createElement('p');
+        para1.textContent = `Array: ${ myArray }`;
+
+        section.appendChild(para1);
+  </script>
+
+</html>

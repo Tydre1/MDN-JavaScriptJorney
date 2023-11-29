@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active learning: Printing those products</title>
+</head>
+<body>
+    
+    <script>
+        const list = document.querySelector('.output ul');
+        const totalBox = document.querySelector('.output p');
+        let total = 0;
+        list.innerHTML = '';
+        totalBox.textContent = '';
+
+        // 1. Abaixo do 'number 1' comentário há uma série de strings, cada uma contendo o nome do produto e o preço separados por dois pontos. Gostaríamos que você transformasse isso em um array e o armazenasse em um array chamado products.
+
+        //2. Abaixo do '// number 2' comentário, inicie um for...of()loop para percorrer cada item do productsarray.
+
+        //3. Abaixo do '// number 3' comentário, queremos que você escreva uma linha de código que divida o item atual do array ( name:price) em dois itens separados, um contendo apenas o nome e outro contendo apenas o preço. Se você não tiver certeza de como fazer isso, consulte o artigo Métodos úteis de string para obter ajuda ou, melhor ainda, consulte a seção Convertendo entre strings e arrays deste artigo.
+
+        //4. Como parte da linha de código acima, você também desejará converter o preço de uma string em um número. Se você não consegue lembrar como fazer isso, confira o primeiro artigo sobre strings .
+
+        //5. Existe uma variável chamada totalque é criada e recebe o valor 0 no topo do código. Dentro do loop (abaixo '// number 4'  ) queremos que você adicione uma linha que adicione o preço atual do item a esse total em cada iteração do loop, para que no final do código o total correto seja impresso na fatura. Você pode precisar de um operador de atribuição para fazer isso.
+
+        //6. Queremos que você altere a linha logo abaixo '// number 5' para que a itemTextvariável seja igual a "nome do item atual - $ preço do item atual", por exemplo "Sapatos - US$ 23,99" em cada caso, para que as informações corretas de cada item sejam impressas no fatura. Esta é apenas uma simples concatenação de strings, que deve ser familiar para você.
+        
+        //7. Finalmente, abaixo do '// number 6' comentário, você precisará adicionar um }para marcar o final do for...of()loop.
+        
+        const products = [
+            'Underpants:6.99',
+            'Socks:5.99',
+            'T-shirt:14.99',
+            'Trousers:31.99',
+            'Shoes:23.99',
+        ];
+
+        for (const product of products) {
+            const subArray = product.split(':');
+            const name = subArray[0];
+            const price = Number(subArray[1]);
+            total += price;
+            const itemText = `${name} — $${price}`;
+
+            const listItem = document.createElement('li');
+            listItem.textContent = itemText;
+            list.appendChild(listItem);
+        }
+
+        totalBox.textContent = `Total: $${total.toFixed(2)}`;
+    </script>
+</body>
+</html>
