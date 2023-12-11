@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Arrays: Task 3</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+
+    //Remova o último item da matriz.
+    //Adicione dois novos nomes ao final da matriz.
+    //Examine cada item da matriz e adicione seu número de índice após o nome entre parênteses, por exemplo Ryu (0). Observe que não ensinamos como fazer isso no artigo sobre Arrays, então você terá que fazer algumas pesquisas.
+    //Por fim, junte os itens do array em uma única string chamada myString, com um separador " -".
+
+    let myArray = [ "Ryu", "Ken", "Chun-Li", "Cammy", "Guile", "Sakura", "Sagat", "Juri" ];
+
+    // Remova o último item da matriz
+    myArray.pop();
+
+    // Adicione dois novos nomes ao final da matriz
+    myArray.push("Naruto", "Sasuke");
+
+    // Examine cada item da matriz e adicione seu número de índice após o nome entre parênteses
+    for (let i = 0; i < myArray.length; i++) {
+    myArray[i] = myArray[i] + " (" + i + ")";
+    }
+
+    // Junte os itens do array em uma única string chamada myString, com um separador " - "
+    let myString = myArray.join(" - "); // Ryu (0) - Ken (1) - Chun-Li (2) - Cammy (3) - Guile (4) - Sakura (5) - Sagat (6) - Naruto (7) - Sasuke (8)
+
+    // Don't edit the code below here!
+
+    section.innerHTML = ' ';
+
+    let para1 = document.createElement('p');
+    para1.textContent = myString;
+
+    section.appendChild(para1);
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    para1.textContent = myString;
+
+    section.appendChild(para1);
+  </script>
+
+</html>
