@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Loop Break</title>
+</head>
+<body>
+
+    <label for="search">Search animals: </label>
+    <input id="search" type="text">
+    <button>Search</button>
+
+    <p></p>
+
+    <script>
+        const animals = [
+            "Cat:4",
+            "Dog:2",
+            "Fish:1",
+            "Butterfly:1",
+        ];
+
+        const para = document.querySelector("p");
+        const input = document.querySelector("input");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            const searchName = input.value.toLowerCase();
+            input.value = "";
+            input.focus();
+            para.textContent = "";
+
+            for (const animal of animals) {
+                const splitAnimal = animal.split(":");
+
+                if (splitAnimal[0].toLowerCase() === searchName) {
+                    para.textContent = `${splitAnimal[0]} has ${splitAnimal[1]} years.`
+                    break;
+                }
+            } 
+            if (para.textContent === "") {
+                    para.textContent = "Animal not found."
+                }
+        });
+    </script>
+</body>
+</html>
